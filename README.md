@@ -11,3 +11,12 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 - GraphQL
 - Jest
 - Cypress
+
+## 📊 Progreso de ejercicios
+
+| Parte  | Estado         |
+|--------|----------------|
+| Part 0 | ✅ Completado  |
+| Part 1 | ✅ Completado  |
+| Part 2 | 🔄 En proceso |
+| Part 3 | ⏳ Pendiente   |
