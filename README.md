@@ -16,17 +16,17 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 
 | Parte  | Estado         |
 |--------|----------------|
-| Parte 0 | ✅ Completado |
-| Parte 1 | 🔄 En proceso |
-| Parte 2 | ⏳ Pendiente  |
-| Parte 3 | ⏳ Pendiente  |
-| Parte 4 | ⏳ Pendiente  |
-| Parte 5 | ⏳ Pendiente  |
-| Parte 6 | ⏳ Pendiente  |
-| Parte 7 | ⏳ Pendiente  |
-| Parte 8 | ⏳ Pendiente  |
-| Parte 9 | ⏳ Pendiente  |
-| Parte 10 | ⏳ Pendiente  |
-| Parte 11 | ⏳ Pendiente  |
-| Parte 12 | ⏳ Pendiente  |
-| Parte 13 | ⏳ Pendiente  |
+| Parte 0: Fundamentos de las aplicaciones web | ✅ Completado |
+| Parte 1: Introducción a React | ✅ Completado |
+| Parte 2: Comunicándose con el servidor | ⏳ Pendiente  |
+| Parte 3: Programando un servidor con NodeJS y Express | ⏳ Pendiente  |
+| Parte 4: Probando servidores Express, administración de usuarios | ⏳ Pendiente  |
+| Parte 5: Probando aplicaciones React | ⏳ Pendiente  |
+| Parte 6: Gestión avanzada del estado | ⏳ Pendiente  |
+| Parte 7: React router, custom hooks, estilando la aplicación con CSS y webpack | ⏳ Pendiente  |
+| Parte 8: GraphQL | ⏳ Pendiente  |
+| Parte 9: TypeScript | ⏳ Pendiente  |
+| Parte 10: React Native | ⏳ Pendiente  |
+| Parte 11: CI/CD | ⏳ Pendiente  |
+| Parte 12: Contenedores | ⏳ Pendiente  |
+| Parte 13: Utilizando bases de datos relacionales | ⏳ Pendiente  |
