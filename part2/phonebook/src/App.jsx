@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react';
+import personsServices from './services/persons.js';
+import './index.css';
 
 const Filter = ({newFilter, handleChangeFilter}) => {
   return (
@@ -24,40 +26,90 @@ const PersonForm = ({newName, newNumber, handleSubmit, handleChangeName, handleC
   )
 }
 
-const Persons = ({persons}) => {
+const Persons = ({persons, handleDelete}) => {
   return (
     <>
-      {persons.map(person => <p key={person.name}>{person.name} {person.number}</p>)}
+      {persons.map(person => <p key={person.id}>{person.name} {person.number} <button onClick={() => {
+        const confirm = window.confirm(`Delete ${person.name}?`);
+        if (confirm) {
+          handleDelete(person.id);
+        }}}
+        >delete</button></p>)}
     </>
   )
 }
 
+const Notification = ({message, typeAlert}) => {
+  if (message === null) {
+    return null;
+  }
+  return(
+    <div className={typeAlert === 'error' ? 'error' : 'success'}>{message}</div>
+  )
+}
 
 const App = () => {
-  const [persons, setPersons] = useState([
-    { name: 'Arto Hellas', number: '040-123456', id: 1 },
-    { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },
-    { name: 'Dan Abramov', number: '12-43-234345', id: 3 },
-    { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
-  ]);
+  const [persons, setPersons] = useState([]);
   const [newName, setNewName] = useState('');
   const [newNumber, setNewNumber] = useState('');
   const [newFilter, setNewFilter] = useState('');
+  const [message, setMessage] = useState(null);
+  const [typeAlert, setTypeAlert] = useState('');
+
+  useEffect(() => {
+    const data = personsServices.getAll();
+    data.then(result => setPersons(result));
+  }, []);
+
 
   const handleSubmit = e => {
     e.preventDefault();
     if (persons.some(person => person.name === newName)) {
-      alert(`${newName} is already added to phonebook`);
-      return;
+      const confirm = window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`);
+      if (confirm) {
+        const person = persons.find(person => person.name === newName);
+        const updatedPerson = {...person, number: newNumber};
+        const data = personsServices.update(updatedPerson);
+        data.then(result => {
+          const newList = persons.map(person => person.id !== result.id ? person : result);
+          setPersons(newList);
+          setNewName('');
+          setNewNumber('');
+          setMessage(`Updated ${result.name}`);
+          setTypeAlert('success');
+          setTimeout(() => {
+            setMessage(null);
+            setTypeAlert('');
+          }, 3000);
+       })
+       .catch(() => {
+        setMessage(`Information of ${newName} has already been removed from server`);
+        setTypeAlert('error');
+        setTimeout(() => {
+          setMessage(null);
+          setTypeAlert('');
+        }, 5000);
+      });
+       return;
     }
-    const addName = {
+    }
+    const addPerson = {
       name: newName,
       number: newNumber
     };
-    const newList = persons.concat(addName);
-    setPersons(newList);
-    setNewName('');
-    setNewNumber('');
+    const data = personsServices.create(addPerson);
+    data.then(result => {
+      const newList = persons.concat(result);
+      setPersons(newList);
+      setNewName('');
+      setNewNumber('');
+      setMessage(`Added ${result.name}`);
+      setTypeAlert('success');
+      setTimeout(() => {
+        setMessage(null);
+        setTypeAlert('');
+      }, 3000)
+    })
   }
 
   const handleChangeName = e => {
@@ -72,6 +124,22 @@ const App = () => {
     setNewFilter(e.target.value);
   }
 
+  const handleDelete = id => {
+    const data = personsServices.remove(id);
+    data.then(() => {
+      const newList = persons.filter(person => person.id !== id);
+      setPersons(newList);
+    })
+    .catch(() => {
+        setMessage(`This user has already been removed from server`);
+        setTypeAlert('error');
+        setTimeout(() => {
+          setMessage(null);
+          setTypeAlert('');
+        }, 5000);
+      });
+  }
+
   const filterPersons = () => {
     if (newFilter !== '') {
       const newList = persons.filter(person => person.name.toLowerCase().includes(newFilter.toLowerCase()));
@@ -83,11 +151,12 @@ const App = () => {
   return (
     <div>
       <h2>Phonebook</h2>
+      <Notification message={message} typeAlert={typeAlert}></Notification>
       <Filter newFilter={newFilter} handleChangeFilter={handleChangeFilter} />
       <h2>Add a new</h2>
       <PersonForm newName={newName} newNumber={newNumber} handleSubmit={handleSubmit} handleChangeName={handleChangeName} handleChangeNumber={handleChangeNumber} />
       <h2>Numbers</h2>
-      <Persons persons={filterPersons()} />
+      <Persons persons={filterPersons()} handleDelete={handleDelete} />
     </div>
   )
 }
