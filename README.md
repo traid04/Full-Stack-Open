@@ -19,7 +19,7 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 | Parte 0: Fundamentos de las aplicaciones web | ✅ Completado |
 | Parte 1: Introducción a React | ✅ Completado |
 | Parte 2: Comunicándose con el servidor | ✅ Completado  |
-| Parte 3: Programando un servidor con NodeJS y Express | ⏳ Pendiente  |
+| Parte 3: Programando un servidor con NodeJS y Express | ✅ Completado  |
 | Parte 4: Probando servidores Express, administración de usuarios | ⏳ Pendiente  |
 | Parte 5: Probando aplicaciones React | ⏳ Pendiente  |
 | Parte 6: Gestión avanzada del estado | ⏳ Pendiente  |
