@@ -20,7 +20,7 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 | Parte 1: Introducción a React | ✅ Completado |
 | Parte 2: Comunicándose con el servidor | ✅ Completado  |
 | Parte 3: Programando un servidor con NodeJS y Express | ✅ Completado  |
-| Parte 4: Probando servidores Express, administración de usuarios | ⏳ Pendiente  |
+| Parte 4: Probando servidores Express, administración de usuarios | ✅ Completado  |
 | Parte 5: Probando aplicaciones React | ⏳ Pendiente  |
 | Parte 6: Gestión avanzada del estado | ⏳ Pendiente  |
 | Parte 7: React router, custom hooks, estilando la aplicación con CSS y webpack | ⏳ Pendiente  |
