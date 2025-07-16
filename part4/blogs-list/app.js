@@ -3,6 +3,7 @@ const app = express()
 const blogsRoutes = require('./controllers/blogs.js')
 const usersRoutes = require('./controllers/users.js')
 const loginRoutes = require('./controllers/login.js')
+const commentsRoutes = require('./controllers/comments.js')
 const middleware = require('./utils/middleware.js')
 
 app.use(express.json())
@@ -14,6 +15,7 @@ if (process.env.NODE_ENV === 'test') {
 app.use('/api/blogs', middleware.userExtractor, blogsRoutes)
 app.use('/api/users', usersRoutes)
 app.use('/api/login', loginRoutes)
+app.use('/api/blogs/:id/comments', commentsRoutes)
 app.use(middleware.errorHandler)
 
 module.exports = app
