@@ -27,7 +27,6 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 | Parte 6: Gestión avanzada del estado                                           | ✅ Completado |
 | Parte 7: React router, custom hooks, estilando la aplicación con CSS y webpack | ✅ Completado |
 | Parte 8: GraphQL                                                               | ✅ Completado |
-| Parte 9: TypeScript                                                            | ⏳ Pendiente  |
-| Parte 11: CI/CD                                                                | ⏳ Pendiente  |
+| Parte 9: TypeScript                                                            | ✅ Completado |
 | Parte 12: Contenedores                                                         | ⏳ Pendiente  |
 | Parte 13: Utilizando bases de datos relacionales                               | ⏳ Pendiente  |
