@@ -1,0 +1,15 @@
+﻿PS C:\Users\mati3\Desktop\Full-Stack-Open\part12\todo-app\todo-backend> docker start todo-backend-mongo-1
+todo-backend-mongo-1
+PS C:\Users\mati3\Desktop\Full-Stack-Open\part12\todo-app\todo-backend> docker exec -it todo-backend-mongo-1 mongosh -u root -p example
+  {
+    _id: ObjectId('6894d88fa1d67121dd89b03d'),
+    text: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
+the_database> exit
+PS C:\Users\mati3\Desktop\Full-Stack-Open\part12\todo-app\todo-backend> Stop-Transcript
+**********************
+Fin de la transcripción de Windows PowerShell
+Hora de finalización: 20250807134812
+**********************

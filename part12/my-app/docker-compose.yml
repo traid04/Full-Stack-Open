@@ -1,0 +1,30 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - MONGO_URI=mongodb+srv://database:root@cluster1.gk7lyot.mongodb.net/
+      - PORT=3003
+      - SECRET=fullstackopentoken
+    expose:
+      - "3003"
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8080:80"
+    depends_on:
+      - frontend
+      - backend
