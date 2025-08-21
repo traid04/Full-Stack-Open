@@ -31,3 +31,6 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 | Parte 9: TypeScript                                                            | ✅ Completado |
 | Parte 12: Contenedores                                                         | ✅ Completado |
 | Parte 13: Utilizando bases de datos relacionales                               | ✅ Completado |
+
+## 🏅 Certificación
+[Ver Certificación oficial](https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/5ef0efa983f4c1e9341e79557c5d0629)
