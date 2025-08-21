@@ -9,6 +9,7 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 - Node.js
 - Express
 - MongoDB
+- PostgreSQL
 - Redux
 - GraphQL
 - Jest
