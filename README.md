@@ -29,4 +29,4 @@ En este repositorio se van a subir los ejercicios realizados en el curso [FullSt
 | Parte 8: GraphQL                                                               | ✅ Completado |
 | Parte 9: TypeScript                                                            | ✅ Completado |
 | Parte 12: Contenedores                                                         | ✅ Completado |
-| Parte 13: Utilizando bases de datos relacionales                               | ⏳ Pendiente  |
+| Parte 13: Utilizando bases de datos relacionales                               | ✅ Completado |
